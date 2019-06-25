@@ -1,33 +1,153 @@
-.App {
+a.main-button {
+  text-decoration: none;
+  color: #ffffff;
+  width: 44vw;
   text-align: center;
+  font-size: 40px;
+  margin: 20px 3vw;
+  padding: 40px 0;
+  background-color: #7373AA;
+  border: 2px solid #4a4a4a;
+  border-radius: 4px;
+  display: inline-block;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+
+.webview-header {
+  width: 100vw;
+  height: 100px;
+  padding: 20px 40px;
+  font-size: 45px;
+  background-color: #4c4c4e;
+  border-bottom: 5px solid #111111;
+  vertical-align: middle;
+  box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.webview-header a {
+  color: white !important;
+}
+
+.webview-iframe {
+  width: 100vw;
+  height: calc(100vh - 100px);
+  border: none;
+  display: block;
+}
+
+.webview-header svg.svg-inline--fa {
+  -webkit-filter: drop-shadow( 5px 5px 1px rgba(0, 0, 0, 1));
+  filter: drop-shadow( 5px 5px 1px rgba(0, 0, 0, 1));
+}
+
+.inactivity-modal {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.inactivity-modal > div {
+  position: absolute;
+  width: 600px;
+  padding: 50px;
+  box-sizing: border-box;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  border: 10px solid rgba(50,50,50,0.5);
+}
+
+.landing-wrapper {
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-flow: column;
 }
 
-.App-link {
-  color: #61dafb;
+.landing-wrapper > .content {
+  position: relative;
+  flex-grow: 1;
+  background-color: #DDDDDD;
+  overflow: hidden;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.landing-wrapper > .content > svg {
+  position: relative;
+  z-index: 5;
+}
+
+.landing-wrapper > .content > img.cok-logo {
+  position: absolute;
+  bottom: 50px;
+  right: 100px;
+  width: 250px;
+  z-index: 10;
+}
+
+.landing-wrapper > .content > img.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  object-fit: cover;
+}
+
+/* Page */
+
+.page {
+  height: 100vh;
+  /*padding: calc(15% + 1.5em) 5% 5%;*/
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+  transition: transform 1s ease-in-out, box-shadow 1s ease-in-out;
+}
+
+.page-enter {
+  transform: translate(0, 100%);
+}
+
+.page-enter-active {
+  transform: translate(0, 0);
+}
+
+.page-exit {
+  box-shadow: 0 0 5em 0 rgba(0, 0, 0, .5) inset;
+  transform: translate(0, -100%);
+}
+
+.page--prev.page-enter {
+  transform: translate(0, -100%);
+}
+
+.page--prev.page-enter-active {
+  transform: translate(0, 0);
+}
+
+.page--prev.page-exit {
+  transform: translate(0, 100%);
+}
+
+.page--swap.page-enter {
+  transform: translate(100%, 0);
+}
+
+.page--swap.page-enter-active {
+  transform: translate(0, 0);
+}
+
+.page--swap.page-exit {
+  transform: translate(-100%, 0);
+}
+
+.page-exit .page__inner {
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
 }
