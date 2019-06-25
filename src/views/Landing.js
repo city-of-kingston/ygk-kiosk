@@ -38,8 +38,9 @@ export default class Landing extends Component {
 		return (
 			<ViewWrapper backgroundColor={backgroundColor}>
 				<div className="landing-wrapper"
-					onClick={() => this.props.history.push('/dashboard')}>
-					<img className="logo" src={logoPath} style={{ width: '50vw', margin: '2vw' }}/>
+					onClick={() => this.props.history.push('/menu')}>
+					<img className="logo" src={logoPath} />
+					<span className="call-to-action">Touch anywhere to explore Kingston</span>
 					<div className="content">
 						<img className="background" src={bgPath} />
 						<svg version="1.1" width="100%" height="100%"

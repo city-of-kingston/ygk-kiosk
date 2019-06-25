@@ -15,20 +15,30 @@ import Defs from './Defs';
 import Landing from './views/Landing';
 import Dashboard from './views/Dashboard';
 import WebView from './views/WebView';
+import Menu from './views/Menu';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
-  faHome
+  faHome, faChevronRight
 );
 
 const supportsHistory = 'pushState' in window.history;
+
+const mainMenuEntries = [
+  { label: 'Tourism Websites' },
+  { label: 'Games' },
+  { label: 'Something Else' },
+  { label: 'Exit' },
+];
 
 const routes = [
   { path: '/', Component: Landing, props: { variant: 0 } },
   { path: '/1', Component: Landing, props: { variant: 1 } },
   { path: '/2', Component: Landing, props: { variant: 2 } },
+  { path: '/menu', Component: Menu,
+    props: { menuEntries: mainMenuEntries } },
   { path: '/dashboard', Component: Dashboard },
   { path: '/possiblemadehere', Component: WebView,
     props: { url: "https://possiblemadehere.org" }},

@@ -3,6 +3,7 @@ import { Button } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'react-router-dom/Link';
 import ViewWrapper from './ViewWrapper';
+import Defs from '../Defs';
 
 class InactivityModal extends Component {
 	constructor(props) {
@@ -94,6 +95,7 @@ export default class WebView extends Component {
 					<Link to={{ pathname: '/', state: { prev: true } }}>
 						<FontAwesomeIcon icon="home" />
 					</Link>
+					<img className="logo ml-4" src={`${Defs.BASENAME}/assets/branding/YGK_rev_white.png`}/>
 				</div>
 				<iframe className="webview-iframe" src={this.props.url} />
 			</ViewWrapper>

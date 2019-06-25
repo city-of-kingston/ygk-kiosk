@@ -13,11 +13,17 @@ a.main-button {
   box-sizing: border-box;
 }
 
+.menu-row {
+  border-bottom: 1px solid #454545;
+  padding: 60px;
+}
+
 
 .webview-header {
   width: 100vw;
   height: 100px;
   padding: 20px 40px;
+  padding-top: 15px;
   font-size: 45px;
   background-color: #4c4c4e;
   border-bottom: 5px solid #111111;
@@ -27,6 +33,12 @@ a.main-button {
 
 .webview-header a {
   color: white !important;
+}
+
+.webview-header > img.logo {
+  position: relative;
+  top: -5px;
+  height: 150%;
 }
 
 .webview-iframe {
@@ -67,6 +79,22 @@ a.main-button {
   height: 100vh;
   display: flex;
   flex-flow: column;
+}
+
+.landing-wrapper > img.logo {
+  width: 50vw;
+  margin-left: 2vw;
+  margin-top: 2vw;
+}
+
+.landing-wrapper > span.call-to-action {
+  margin-left: 7vw;
+  color: white;
+  font-size: 50px;
+  margin-bottom: 20px;
+  position: relative;
+  top: -10px;
+  font-weight: 100;
 }
 
 .landing-wrapper > .content {
