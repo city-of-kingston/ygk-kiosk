@@ -10,6 +10,8 @@ import {
   TransitionGroup
 } from 'react-transition-group';
 
+import Defs from './Defs';
+
 import Landing from './views/Landing';
 import Dashboard from './views/Dashboard';
 import WebView from './views/WebView';
@@ -34,10 +36,11 @@ const routes = [
     props: { url: "http://kingstonairport.ca" }},
   { path: '/seontario', Component: WebView,
     props: { url: "https://thegreatwaterway.com" }},
-]
+];
 
 const App = () => (
-  <BrowserRouter forceRefresh={!supportsHistory}>
+  <BrowserRouter forceRefresh={!supportsHistory}
+    basename={Defs.BASENAME}>
     {routes.map(({ path, Component, props }) => (
       <Route key={path} exact path={path}>
         {({ match, ...rest }) => (

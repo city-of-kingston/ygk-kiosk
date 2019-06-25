@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
 import ViewWrapper from './ViewWrapper'
+import Defs from '../Defs';
 
 const VARIANTS = [
 	{
 		backgroundColor: '#00918a', // lake
-		logoPath: '/assets/branding/YGK_rev_white_plum.png',
-		bgPath: '/assets/images/RS2159_IMG_4704.jpg',
+		logoPath: `${Defs.BASENAME}/assets/branding/YGK_rev_white_plum.png`,
+		bgPath: `${Defs.BASENAME}/assets/images/RS2159_IMG_4704.jpg`,
 	},
 	{
 		backgroundColor: '#cf4c27', // sunset
-		logoPath: '/assets/branding/YGK_rev_white_forest.png',
-		bgPath: '/assets/images/RS9453_Copy-of-Open_TroyJohnson_1.jpg',
+		logoPath: `${Defs.BASENAME}/assets/branding/YGK_rev_white_forest.png`,
+		bgPath: `${Defs.BASENAME}/assets/images/RS9453_Copy-of-Open_TroyJohnson_1.jpg`,
 	},
 	{
 		backgroundColor: '#5e1358', // plum
-		logoPath: '/assets/branding/YGK_rev_white_autumn.png',
-		bgPath: '/assets/images/steam-5-1.jpg',
+		logoPath: `${Defs.BASENAME}/assets/branding/YGK_rev_white_autumn.png`,
+		bgPath: `${Defs.BASENAME}/assets/images/steam-5-1.jpg`,
 	},
 ];
 
@@ -60,7 +61,7 @@ export default class Landing extends Component {
 								fill={backgroundColor}/>
 						</svg>
 
-						<img className="cok-logo" src="/assets/city-of-kingston.png" />
+						<img className="cok-logo" src={`${Defs.BASENAME}/assets/city-of-kingston.png`} />
 					</div>
 				</div>
 			</ViewWrapper>
