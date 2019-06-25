@@ -27,10 +27,27 @@ library.add(
 const supportsHistory = 'pushState' in window.history;
 
 const mainMenuEntries = [
-  { label: 'Tourism Websites' },
-  { label: 'Games' },
-  { label: 'Something Else' },
-  { label: 'Exit' },
+  // { label: 'Tourism Websites',
+  //   path: undefined },
+  // { label: 'Games',
+  //   path: undefined },
+  // { label: 'Something Else',
+  //   path: undefined },
+  { label: 'possible made here',
+    labelStyle: { color: 'white', fontWeight: 'bold', fontFamily: 'Arial', fontSize: '90px' },
+    iconStyle: { color: '#42c1af' },
+    buttonStyle: { backgroundColor: '#4d4094' },
+    path: '/possiblemadehere' },
+  { label: 'YGK Airport Website',
+    // iconStyle: { color: '#e6721b' },
+    buttonStyle: { backgroundColor: '#5bcbdc' },
+    path: 'kingstonairport' },
+  { label: 'SE Ontario Website',
+    buttonStyle: { backgroundColor: '#f0ede5' },
+    iconStyle: { color: '#720d22' },
+    path: 'seontario' },
+  { label: 'Go Back', icon: 'home',
+    path: '/', swap: false },
 ];
 
 const routes = [

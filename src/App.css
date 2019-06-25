@@ -13,12 +13,6 @@ a.main-button {
   box-sizing: border-box;
 }
 
-.menu-row {
-  border-bottom: 1px solid #454545;
-  padding: 60px;
-}
-
-
 .webview-header {
   width: 100vw;
   height: 100px;
@@ -128,54 +122,108 @@ a.main-button {
 /* Page */
 
 .page {
-  height: 100vh;
   /*padding: calc(15% + 1.5em) 5% 5%;*/
   overflow-y: auto;
   overflow-x: hidden;
   position: fixed;
+  width: 100vw;
+  height: 100vh;
   top: 0;
-  width: 100%;
+  left: 0;
   -webkit-overflow-scrolling: touch;
-  transition: transform 1s ease-in-out, box-shadow 1s ease-in-out;
+  transition: left 1s ease-in-out, top 1s ease-in-out, box-shadow 1s ease-in-out;
 }
 
 .page-enter {
-  transform: translate(0, 100%);
+  top: 100vh;
+  left: 0;
 }
 
 .page-enter-active {
-  transform: translate(0, 0);
+  top: 0;
+  left: 0;
 }
 
 .page-exit {
   box-shadow: 0 0 5em 0 rgba(0, 0, 0, .5) inset;
-  transform: translate(0, -100%);
+  top: -100vh;
+  left: 0;
 }
 
 .page--prev.page-enter {
-  transform: translate(0, -100%);
+  top: -100vh;
+  left: 0;
 }
 
 .page--prev.page-enter-active {
-  transform: translate(0, 0);
+  top: 0;
+  left: 0;
 }
 
 .page--prev.page-exit {
-  transform: translate(0, 100%);
+  top: 100vh;
+  left: 0;
 }
 
 .page--swap.page-enter {
-  transform: translate(100%, 0);
+  left: 100vw;
+  top: 0;
 }
 
 .page--swap.page-enter-active {
-  transform: translate(0, 0);
+  left: 0;
+  top: 0;
 }
 
 .page--swap.page-exit {
-  transform: translate(-100%, 0);
+  left: -100vw;
+  top: 0;
 }
 
 .page-exit .page__inner {
-  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+  transition: left 1s ease-in-out, top 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+/* Menu Row */
+
+.menu-row {
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+  transition: top 1s ease;
+
+  border-bottom: 50px solid rgba(0,0,0,0.2);
+  padding: 60px;
+  margin: 0;
+  height: 18vh;
+  width: 100vw;
+}
+
+.menu-row::after {
+  content: ' ';
+  position: absolute;
+  left: 0;
+  top: 18vh;
+  width: 100%;
+  height: 50px;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, .1) inset;
+}
+
+.menu-row-enter-active {
+  top: 0 !important;
+}
+
+.menu-row-enter-done {
+  top: 0 !important;
+}
+
+.menu-row-exit {
+  top: inherit;
+}
+
+.menu-row-exit-active {
+
+}
+
+.menu-row-exit-done {
+
 }
