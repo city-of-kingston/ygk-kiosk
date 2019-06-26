@@ -44,10 +44,10 @@ export default class Landing extends Component {
 				onExit={() => this.cancelPageSwap()}>
 				<div className="landing-wrapper"
 					onClick={() => this.props.history.push('/menu')}>
-					<img className="logo" src={logoPath} />
+					<img className="logo" src={logoPath} alt="YGK Logo" />
 					<span className="call-to-action">Tap anywhere to {['explore', 'discover', 'learn about'][this.props.variant]} Kingston</span>
 					<div className="content">
-						<img className="background" src={bgPath} />
+						<img className="background" src={bgPath} alt="" />
 						<svg version="1.1" width="100%" height="100%"
 							viewBox="0 0 200 200" preserveAspectRatio="xMaxYMin slice">
 							<defs>
@@ -67,7 +67,8 @@ export default class Landing extends Component {
 								fill={backgroundColor}/>
 						</svg>
 
-						<img className="cok-logo" src={`${Defs.BASENAME}/assets/city-of-kingston.png`} />
+						<img className="cok-logo" src={`${Defs.BASENAME}/assets/city-of-kingston.png`}
+							alt="City of Kingston Logo" />
 					</div>
 				</div>
 			</ViewWrapper>

@@ -1,19 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-import BrowserRouter from 'react-router-dom/BrowserRouter';
-import Route from 'react-router-dom/Route';
-import Switch from 'react-router-dom/Switch';
-import {
-  CSSTransition,
-  TransitionGroup
-} from 'react-transition-group';
+import { BrowserRouter, Route } from 'react-router-dom';
+import { CSSTransition } from 'react-transition-group';
 
 import Defs from './Defs';
 
 import Landing from './views/Landing';
-import Dashboard from './views/Dashboard';
 import WebView from './views/WebView';
 import Menu from './views/Menu';
 
@@ -47,7 +40,7 @@ const mainMenuEntries = [
     iconStyle: { color: '#720d22' },
     path: 'seontario' },
   { label: 'Go Back', icon: 'home',
-    path: '/', swap: false },
+    path: '/', swap: false, prev: true, triggersAnimation: true },
 ];
 
 const routes = [
@@ -56,13 +49,12 @@ const routes = [
   { path: '/2', Component: Landing, props: { variant: 2 } },
   { path: '/menu', Component: Menu,
     props: { menuEntries: mainMenuEntries } },
-  { path: '/dashboard', Component: Dashboard },
   { path: '/possiblemadehere', Component: WebView,
-    props: { url: "https://possiblemadehere.org" }},
+    props: { url: "https://possiblemadehere.org", title: 'Possible Made Here.' }},
   { path: '/kingstonairport', Component: WebView,
-    props: { url: "http://kingstonairport.ca" }},
+    props: { url: "http://kingstonairport.ca", title: 'YGK Airport' }},
   { path: '/seontario', Component: WebView,
-    props: { url: "https://thegreatwaterway.com" }},
+    props: { url: "https://thegreatwaterway.com", title: 'South Eastern Ontario' }},
 ];
 
 const App = () => (
@@ -82,27 +74,6 @@ const App = () => (
         )}
       </Route>
     ))}
-    {/* This route is to grab the location so that the
-        nested route won't get re-rendered when transitioning */}
-    {/*<Route render={({ location }) => {
-      const { pathname } = location;
-      return (
-        <TransitionGroup>
-          <CSSTransition key={pathname}
-            classNames="page"
-            timeout={{ enter: 1000, exit: 1000 }}>
-            <Route location={ location }
-              render={() => (
-                <Switch>
-                  <Route path="/" exact component={ Dashboard } />
-                  <Route path="/possiblemadehere"
-                    component={ WebView("https://possiblemadehere.org") } />
-                </Switch>
-              )} />
-          </CSSTransition>
-        </TransitionGroup>
-      );
-    }} />*/}
   </BrowserRouter>
 );
 
