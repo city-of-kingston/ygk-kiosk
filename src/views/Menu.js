@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { CSSTransition } from 'react-transition-group';
 
 import ViewWrapper from './ViewWrapper';
+import RippleButton from '../components/RippleButton';
 
 export default class Menu extends Component {
 	constructor(props) {
@@ -30,8 +31,12 @@ export default class Menu extends Component {
 		clearTimeout(this.inactiveNavigation);
 	}
 
-	onEntryClicked(path, swap=true, prev=false, triggersAnimation=false) {
+	onEntryClicked(e, path, swap=true, prev=false, triggersAnimation=false) {
 		this.setState({ animate: triggersAnimation });
+		if (triggersAnimation) {
+			e.preventDefault();
+			e.stopPropagation();
+		}
 
 		if (!path) console.error(`Pushing path "${path}" onto history...`);
 		this.props.history.push(path, { swap, prev });
@@ -55,15 +60,15 @@ export default class Menu extends Component {
 					iconStyle={}
 				}) => {
 					let i = rowInd++;
-					return (
-						<CSSTransition appear={true} in={this.props.in || !this.state.animate} key={path} timeout={200} classNames="menu-row">
+					return (<RippleButton>
+						<CSSTransition appear={true} in={this.props.in || !this.state.animate} key={path} timeout={250 * i} classNames="menu-row">
 							<Row className="menu-row align-items-center"
-								style={{ zIndex: 100 - i, top: `calc(40vh * ${i+1})`, ...buttonStyle }}
-								onClick={() => this.onEntryClicked(path, swap, prev, triggersAnimation)}>
+								style={{ zIndex: 100 - i, top: '15vh', ...buttonStyle }}
+								onClick={(e) => this.onEntryClicked(e, path, swap, prev, triggersAnimation)}>
 								<h1 className="display-1" style={labelStyle}>{ label }</h1>
 								<FontAwesomeIcon icon={icon} style={iconStyle} className="h1 display-1 ml-auto"/>
 							</Row>
-						</CSSTransition>
+						</CSSTransition></RippleButton>
 					);
 				})}
 			</ViewWrapper>

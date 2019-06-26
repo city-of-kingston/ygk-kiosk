@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ViewWrapper from './ViewWrapper'
 import Defs from '../Defs';
 
+import RippleButton from '../components/RippleButton';
+
 const VARIANTS = [
 	{
 		backgroundColor: '#00918a', // lake
@@ -42,10 +44,12 @@ export default class Landing extends Component {
 		return (
 			<ViewWrapper backgroundColor={backgroundColor} in={this.props.in}
 				onExit={() => this.cancelPageSwap()}>
+				<RippleButton>
 				<div className="landing-wrapper"
 					onClick={() => this.props.history.push('/menu')}>
 					<img className="logo" src={logoPath} alt="YGK Logo" />
 					<span className="call-to-action">Tap anywhere to {['explore', 'discover', 'learn about'][this.props.variant]} Kingston</span>
+					
 					<div className="content">
 						<img className="background" src={bgPath} alt="" />
 						<svg version="1.1" width="100%" height="100%"
@@ -71,6 +75,7 @@ export default class Landing extends Component {
 							alt="City of Kingston Logo" />
 					</div>
 				</div>
+				</RippleButton>
 			</ViewWrapper>
 		);
 	}
