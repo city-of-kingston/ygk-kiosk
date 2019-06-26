@@ -203,7 +203,8 @@ a.main-button {
 .menu-row {
   position: relative;
   -webkit-overflow-scrolling: touch;
-  transition: top 1s ease;
+  transition: top 1s ease, opacity 1s ease;
+  opacity: 0;
 
   border-bottom: 50px solid rgba(0,0,0,0.2);
   padding: 60px;
@@ -224,10 +225,12 @@ a.main-button {
 
 .menu-row-enter-active {
   top: 0 !important;
+  opacity: 1;
 }
 
 .menu-row-enter-done {
   top: 0 !important;
+  opacity: 1;
 }
 
 .menu-row-exit {
