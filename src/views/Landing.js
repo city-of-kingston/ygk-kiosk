@@ -26,7 +26,7 @@ export default class Landing extends Component {
 		let nextPage = `/${nextVariant > 0? nextVariant : ''}`;
 		this.swapTimeout = setTimeout(
 			() => this.props.history.push(nextPage, { swap: true }),
-			15000);
+			5000);
 	}
 
 	componentWillUnmount() {
@@ -40,7 +40,7 @@ export default class Landing extends Component {
 				<div className="landing-wrapper"
 					onClick={() => this.props.history.push('/menu')}>
 					<img className="logo" src={logoPath} />
-					<span className="call-to-action">Tap anywhere to explore Kingston</span>
+					<span className="call-to-action">Tap anywhere to {['explore', 'discover', 'learn about'][this.props.variant]} Kingston</span>
 					<div className="content">
 						<img className="background" src={bgPath} />
 						<svg version="1.1" width="100%" height="100%"
