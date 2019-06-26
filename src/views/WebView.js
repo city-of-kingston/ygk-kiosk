@@ -66,7 +66,7 @@ export default class WebView extends Component {
 	startInactivityTimer() {
 		this.inactivityTimer = setTimeout(
 			this.showInactivityModal.bind(this),
-			60000);
+			90000);
 	}
 
 	componentWillUnmount() {
