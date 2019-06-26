@@ -77,7 +77,7 @@ const App = () => (
             classNames="page"
             unmountOnExit
           >
-            <Component {...props} {...rest} />
+            <Component {...props} {...rest} in={match != null} />
           </CSSTransition>
         )}
       </Route>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { withRouter } from 'react-router';
 
 const classNames = (cx) =>
@@ -7,27 +7,39 @@ const classNames = (cx) =>
     .map(([c, x]) => c)
     .join(' ');
 
-const ViewWrapper = ({
-  location: {
-    state,
-  },
-  children,
-  backgroundColor="#FFFFFF"
-}) => {
-  const cx = classNames({
-    page: true,
-    'page--prev': state && state.prev,
-    'page--swap': state && state.swap,
-  });
+class ViewWrapper extends Component {
 
-  return (
-    <section className={cx}
-      style={{ backgroundColor }}>
-      <div className="page__inner">
-        {children}
-      </div>
-    </section>
-  );
+  componentDidUpdate(prevProps) {
+    if (prevProps.in && !this.props.in) {
+      let { onExit=()=>{} } = this.props;
+      onExit();
+    }
+  }
+
+  render() {
+    let {
+      location: {
+        state,
+      },
+      children,
+      backgroundColor="#FFFFFF"
+    } = this.props;
+
+    let cx = classNames({
+      page: true,
+      'page--prev': state && state.prev,
+      'page--swap': state && state.swap,
+    });
+
+    return (
+      <section className={cx}
+        style={{ backgroundColor }}>
+        <div className="page__inner">
+          {children}
+        </div>
+      </section>
+    );
+  }
 }
 
 export default withRouter(ViewWrapper);

@@ -26,17 +26,22 @@ export default class Landing extends Component {
 		let nextPage = `/${nextVariant > 0? nextVariant : ''}`;
 		this.swapTimeout = setTimeout(
 			() => this.props.history.push(nextPage, { swap: true }),
-			5000);
+			7000);
+	}
+
+	cancelPageSwap() {
+		clearTimeout(this.swapTimeout);
 	}
 
 	componentWillUnmount() {
-		clearTimeout(this.swapTimeout);
+		this.cancelPageSwap();
 	}
 
 	render() {
 		let { backgroundColor, logoPath, bgPath } = VARIANTS[this.props.variant];
 		return (
-			<ViewWrapper backgroundColor={backgroundColor}>
+			<ViewWrapper backgroundColor={backgroundColor} in={this.props.in}
+				onExit={() => this.cancelPageSwap()}>
 				<div className="landing-wrapper"
 					onClick={() => this.props.history.push('/menu')}>
 					<img className="logo" src={logoPath} />

@@ -96,8 +96,8 @@ a.main-button {
 .landing-wrapper > .content {
   position: relative;
   flex-grow: 1;
-  background-color: #DDDDDD;
   overflow: hidden;
+  top: -4px;
 }
 
 .landing-wrapper > .content > svg {
@@ -119,6 +119,7 @@ a.main-button {
   height: 100%;
   z-index: 1;
   object-fit: cover;
+  top: 2px;
 }
 
 /* Page */
@@ -217,7 +218,7 @@ a.main-button {
   left: 0;
   top: 18vh;
   width: 100%;
-  height: 50px;
+  height: 20px;
   box-shadow: 0 10px 10px 0 rgba(0, 0, 0, .1) inset;
 }
 
