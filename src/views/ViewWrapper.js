@@ -18,6 +18,7 @@ class ViewWrapper extends Component {
 
   render() {
     let {
+      bgStyle={},
       location: {
         state,
       },
@@ -34,6 +35,7 @@ class ViewWrapper extends Component {
     return (
       <section className={cx}
         style={{ backgroundColor }}>
+        <div className="page__bg" style={bgStyle}/>
         <div className="page__inner">
           {children}
         </div>

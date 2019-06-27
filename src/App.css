@@ -137,6 +137,11 @@ a.main-button {
   transition: left 1s ease-in-out, top 1s ease-in-out, box-shadow 1s ease-in-out;
 }
 
+.page__bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+}
+
 .page-enter {
   top: 100vh;
   left: 0;
@@ -214,7 +219,7 @@ a.main-button {
   width: 100vw;
 }
 
-.menu-row::after {
+.menu-row:after {
   content: ' ';
   position: absolute;
   left: 0;
@@ -243,48 +248,56 @@ a.main-button {
 .menu-row-exit-done {
 }
 
-/* Menu Col */
+/* Menu Btn */
 
-.menu-col {
+.menu-btn {
   position: relative;
   -webkit-overflow-scrolling: touch;
-  transition: top 1s ease, opacity 1s ease;  
+  width: 50%;
+  float: left;
+  /*clear: left;*/
 }
 
-.menu-col .contents {
-  background-color: #7777AA;
-  border: 10px solid rgba(0,0,0,0.2);
-  border-radius: 50px;
-  padding: 60px;
-  margin: 20px;
-  width: calc(100% - 40px);
-}
-
-/*.menu-col::after {
-  content: ' ';
-  position: absolute;
-  left: 0;
-  top: 15vh;
-  width: 100%;
-  height: 20px;
-  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, .1) inset;
+/*.menu-btn:nth-child(2n) {
+  float: right;
+  clear: right;
 }*/
 
-.menu-col-enter-active {
-  top: 0 !important;
+.menu-btn .contents {
+  background-color: rgba(25,25,25,0.6);
+  border: 5px solid rgba(0,0,0,0.2);
+  border-radius: 2px;
+  padding: 40px;
+  margin: 20px;
+  width: calc(100% - 40px);
+  color: white;
+
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.menu-btn .contents:after {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+
   opacity: 1;
+  transition: opacity 1s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
-.menu-col-enter-done {
-  top: 0 !important;
+.menu-btn-enter-active .contents:after,
+.menu-btn-enter-done .contents:after,
+.menu-btn-exit .contents:after,
+.menu-btn-exit-active .contents:after,
+.menu-btn-exit-done .contents:after {
+  opacity: 0;
+}
+
+.menu-btn-enter-active .contents,
+.menu-btn-enter-done .contents {
   opacity: 1;
-}
-
-.menu-col-exit {
-}
-
-.menu-col-exit-active {
-}
-
-.menu-col-exit-done {
 }

@@ -26,21 +26,27 @@ const mainMenuEntries = [
   //   path: undefined },
   // { label: 'Something Else',
   //   path: undefined },
-  { label: 'possible made here',
-    labelStyle: { color: 'white', fontWeight: 'bold', fontFamily: 'Arial', fontSize: '90px' },
+  { label: 'Visit Kingston',
+    desc: 'Experience Kingston’s vibrant culture and find out what makes the Limestone City one of Canada’s most popular destinations.',
+    path: '/visitkingston' },
+  { label: 'Possible Made Here',
+    desc: 'Discover the possibility and advantage of building your life in Kingston.',
+    // labelStyle: { color: 'white', fontWeight: 'bold', fontFamily: 'Arial', fontSize: '90px' },
     iconStyle: { color: '#42c1af' },
     buttonStyle: { backgroundColor: '#4d4094' },
     path: '/possiblemadehere' },
-  { label: 'YGK Airport Website',
+  { label: 'YGK Airport',
+    desc: 'Navigate the fascinating history and modern amenities of our brand new airport.',
     // iconStyle: { color: '#e6721b' },
     buttonStyle: { backgroundColor: '#5bcbdc' },
     path: 'kingstonairport' },
-  { label: 'SE Ontario Website',
+  { label: 'South Eastern Ontario',
+    desc: 'Discover enchanting villages, endless beaches, and award-winning wineries nestled along the shores of our region’s majestic waterways.',
     buttonStyle: { backgroundColor: '#f0ede5' },
     iconStyle: { color: '#720d22' },
     path: 'seontario' },
-  { label: 'Go Back', icon: 'home',
-    path: '/', swap: false, prev: true, triggersAnimation: true },
+  // { label: 'Go Back', icon: 'home',
+  //   path: '/', swap: false, prev: true, triggersAnimation: true },
 ];
 
 const routes = [
@@ -55,6 +61,8 @@ const routes = [
     props: { url: "http://kingstonairport.ca", title: 'YGK Airport' }},
   { path: '/seontario', Component: WebView,
     props: { url: "https://thegreatwaterway.com", title: 'South Eastern Ontario' }},
+  { path: '/visitkingston', Component: WebView,
+    props: { url: "https://www.visitkingston.ca/", title: 'Visit Kingston' }},
 ];
 
 const App = () => (

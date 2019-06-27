@@ -8,7 +8,7 @@ const VARIANTS = [
 	{
 		backgroundColor: '#00918a', // lake
 		logoPath: `${Defs.BASENAME}/assets/branding/YGK_rev_white_plum.png`,
-		bgPath: `${Defs.BASENAME}/assets/images/RS2159_IMG_4704.jpg`,
+		bgPath: `${Defs.BASENAME}/assets/images/Unknown-Evi-Tureluren-1.jpg`,
 	},
 	{
 		backgroundColor: '#cf4c27', // sunset
@@ -18,7 +18,7 @@ const VARIANTS = [
 	{
 		backgroundColor: '#5e1358', // plum
 		logoPath: `${Defs.BASENAME}/assets/branding/YGK_rev_white_autumn.png`,
-		bgPath: `${Defs.BASENAME}/assets/images/steam-5-1.jpg`,
+		bgPath: `${Defs.BASENAME}/assets/images/Sailing-by-Fort-Henry-NHS-Kingston-Photo-courtesy-of-Ahoy-Rentals.jpg`,
 	},
 ];
 

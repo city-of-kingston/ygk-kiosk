@@ -31,13 +31,15 @@ export default class RippleButton extends Component {
 
     onClick(e) {
         let btnEl = e.nativeEvent.target.closest('.ripple-button');
+        let rect = btnEl.getBoundingClientRect();
         let xPos=0, yPos=0;
+        
         if (e.nativeEvent.target === btnEl) {
             xPos = e.nativeEvent.offsetX;
             yPos = e.nativeEvent.offsetY;
         } else {
-            xPos = e.nativeEvent.x - btnEl.offsetLeft;
-            yPos = e.nativeEvent.y - btnEl.offsetTop;
+            xPos = e.nativeEvent.x - rect.left;
+            yPos = e.nativeEvent.y - rect.top;
         }
         // do it twice to get 2 renders
         // for some reason it won't do it automatically
@@ -50,12 +52,15 @@ export default class RippleButton extends Component {
         })
         e.stopPropagation();
         e.preventDefault();
+
+        if (typeof this.props.onClick === 'function') this.props.onClick(e);
     }
 
     render() {
+        let { className='' } = this.props;
         return (
             <div onClick={this.onClick.bind(this)}
-                    className={`ripple-button ${this.state.pressed? 'btn-animate' : ''}`}>
+                    className={`ripple-button ${className} ${this.state.pressed? 'btn-animate' : ''}`}>
                 {this.props.children}
                 <div className="ripple" style={{left: this.state.xPos, top: this.state.yPos}} />
             </div>
