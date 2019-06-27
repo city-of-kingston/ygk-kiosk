@@ -8,7 +8,7 @@ import Defs from './Defs';
 
 import Landing from './views/Landing';
 import WebView from './views/WebView';
-import Menu from './views/Menu';
+import ButtonMenu from './views/ButtonMenu';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faHome, faChevronRight } from '@fortawesome/free-solid-svg-icons';
@@ -47,7 +47,7 @@ const routes = [
   { path: '/', Component: Landing, props: { variant: 0 } },
   { path: '/1', Component: Landing, props: { variant: 1 } },
   { path: '/2', Component: Landing, props: { variant: 2 } },
-  { path: '/menu', Component: Menu,
+  { path: '/menu', Component: ButtonMenu,
     props: { menuEntries: mainMenuEntries } },
   { path: '/possiblemadehere', Component: WebView,
     props: { url: "https://possiblemadehere.org", title: 'Possible Made Here.' }},

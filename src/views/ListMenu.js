@@ -8,7 +8,7 @@ import { CSSTransition } from 'react-transition-group';
 import ViewWrapper from './ViewWrapper';
 import RippleButton from '../components/RippleButton';
 
-export default class Menu extends Component {
+export default class ListMenu extends Component {
 	constructor(props) {
 		super(props);
 
