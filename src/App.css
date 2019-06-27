@@ -260,6 +260,10 @@ a.main-button {
   /*clear: left;*/
 }
 
+.menu-btn.full-width {
+  width: 100%;
+}
+
 /*.menu-btn:nth-child(2n) {
   float: right;
   clear: right;

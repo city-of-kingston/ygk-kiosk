@@ -53,10 +53,11 @@ export default class ButtonMenu extends Component {
         return (
             <ViewWrapper bgStyle={{background: `url(${bgUrl})`, filter: 'grayscale(40%) blur(5px) brightness(0.5)'}} in={this.props.in}
                 onExit={() => this.cancelInactiveNavigation()}>
-                <ul style={{margin: '50px', padding: 0, listStyle: 'none'}}>
+                <ul style={{margin: '50px', marginTop: '20vh', padding: 0, listStyle: 'none'}}>
                     {/*<li className="menu-btn" style={{ height: '100px'}} />*/}
                 { menuEntries.map(({
                     label, desc='', path,
+                    fullWidth=false,
                     swap=true,
                     prev=false,
                     triggersAnimation=false,
@@ -68,11 +69,14 @@ export default class ButtonMenu extends Component {
                     let i = rowInd++;
                     return (
                         <CSSTransition appear={true} in={this.props.in} key={path} timeout={100 * i + 500} classNames="menu-btn">
-                            <li className="menu-btn" tabindex={i}>
+                            <li className={`menu-btn ${fullWidth? 'full-width':''}`} tabindex={i}>
                                 <div className="contents"
                                     onClick={(e) => this.onEntryClicked(e, path, swap, prev, triggersAnimation)}>
                                     <h2 className="display-4">{label}</h2>
                                     <p class="lead mt-4">{ desc }</p>
+
+                                <FontAwesomeIcon icon="chevron-right"
+                                    style={{ position: 'absolute', right: 0, bottom: 0, margin: '30px' }}/>
                                 </div>
                             </li>
                         </CSSTransition>

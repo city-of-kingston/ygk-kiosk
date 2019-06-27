@@ -45,8 +45,7 @@ export default class Landing extends Component {
 				<div className="landing-wrapper"
 					onClick={() => this.props.history.push('/menu')}>
 					<img className="logo" src={logoPath} alt="YGK Logo" />
-					<span className="call-to-action">Tap anywhere to {['explore', 'discover', 'learn about'][this.props.variant]} Kingston</span>
-					
+					<span className="call-to-action">Tap anywhere to begin</span>
 					<div className="content">
 						<img className="background" src={bgPath} alt="" />
 						<svg version="1.1" width="100%" height="100%"
