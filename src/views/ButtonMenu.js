@@ -7,7 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { CSSTransition } from 'react-transition-group';
 
 import ViewWrapper from './ViewWrapper';
-import RippleButton from '../components/RippleButton';
 
 import Defs from '../Defs';
 
@@ -69,12 +68,12 @@ export default class ButtonMenu extends Component {
                     let i = rowInd++;
                     return (
                         <CSSTransition appear={true} in={this.props.in} key={path} timeout={100 * i + 500} classNames="menu-btn">
-                            <li className="menu-btn">
-                                <RippleButton className="contents"
+                            <li className="menu-btn" tabindex={i}>
+                                <div className="contents"
                                     onClick={(e) => this.onEntryClicked(e, path, swap, prev, triggersAnimation)}>
                                     <h2 className="display-4">{label}</h2>
                                     <p class="lead mt-4">{ desc }</p>
-                                </RippleButton>
+                                </div>
                             </li>
                         </CSSTransition>
                     );
