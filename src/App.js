@@ -20,30 +20,24 @@ library.add(
 const supportsHistory = 'pushState' in window.history;
 
 const mainMenuEntries = [
-  // { label: 'Tourism Websites',
-  //   path: undefined },
-  // { label: 'Games',
-  //   path: undefined },
-  // { label: 'Something Else',
-  //   path: undefined },
   { label: 'Possible Made Here', fullWidth: true,
+    borderColor: '#ee365f', backgroundColor: 'rgba(76, 48, 65, 0.5)',
     desc: 'Discover the possibility and advantage of building your life in Kingston.',
-    // labelStyle: { color: 'white', fontWeight: 'bold', fontFamily: 'Arial', fontSize: '90px' },
-    iconStyle: { color: '#42c1af' },
-    buttonStyle: { backgroundColor: '#4d4094' },
     path: '/possiblemadehere' },
+
   { label: 'Visit Kingston',
+    borderColor: '#cf4c27', backgroundColor: 'rgba(68, 54, 53, 0.5)',
     desc: 'Experience Kingston’s vibrant culture and find out what makes the Limestone City one of Canada’s most popular destinations.',
     path: '/visitkingston' },
+
   { label: 'YGK Airport',
+    borderColor: '#842269', backgroundColor: 'rgba(63, 43, 86, 0.5)',
     desc: 'Navigate the fascinating history and modern amenities of our brand new airport.',
-    // iconStyle: { color: '#e6721b' },
-    buttonStyle: { backgroundColor: '#5bcbdc' },
     path: 'kingstonairport' },
+
   { label: 'South Eastern Ontario', fullWidth: true,
+    borderColor: '#ac0940', backgroundColor: 'rgba(76, 48, 65, 0.5)',
     desc: 'Discover enchanting villages, endless beaches, and award-winning wineries nestled along the shores of our region’s majestic waterways.',
-    buttonStyle: { backgroundColor: '#f0ede5' },
-    iconStyle: { color: '#720d22' },
     path: 'seontario' },
   // { label: 'Go Back', icon: 'home',
   //   path: '/', swap: false, prev: true, triggersAnimation: true },

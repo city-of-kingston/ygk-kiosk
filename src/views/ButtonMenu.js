@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-import {
-    Row,
-    Col
-} from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { CSSTransition } from 'react-transition-group';
 
@@ -62,18 +58,16 @@ export default class ButtonMenu extends Component {
                     prev=false,
                     triggersAnimation=false,
                     icon='chevron-right',
-                    buttonStyle={ backgroundColor: '#ffffff' },
-                    labelStyle={},
-                    iconStyle={}
+                    backgroundColor, borderColor
                 }) => {
                     let i = rowInd++;
                     return (
                         <CSSTransition appear={true} in={this.props.in} key={path} timeout={100 * i + 500} classNames="menu-btn">
-                            <li className={`menu-btn ${fullWidth? 'full-width':''}`} tabindex={i}>
-                                <div className="contents"
+                            <li className={`menu-btn ${fullWidth? 'full-width':''}`} tabIndex={i}>
+                                <div className="contents" style={{backgroundColor, borderColor}}
                                     onClick={(e) => this.onEntryClicked(e, path, swap, prev, triggersAnimation)}>
                                     <h2 className="display-4">{label}</h2>
-                                    <p class="lead mt-4">{ desc }</p>
+                                    <p className="lead mt-4">{ desc }</p>
 
                                 <FontAwesomeIcon icon="chevron-right"
                                     style={{ position: 'absolute', right: 0, bottom: 0, margin: '30px' }}/>
