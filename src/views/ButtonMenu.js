@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { CSSTransition } from 'react-transition-group';
-
+import { Link } from 'react-router-dom';
 import ViewWrapper from './ViewWrapper';
 
 import Defs from '../Defs';
 
-const bgUrl = `${Defs.BASENAME}/assets/images/RS7743_DSC_1683-1.jpg`;
+const bgUrl = `${Defs.BASENAME}/assets/images/IMG_1401.jpg`;
 
 export default class ButtonMenu extends Component {
     constructor(props) {
@@ -20,7 +20,7 @@ export default class ButtonMenu extends Component {
     componentDidMount() {
         this.inactiveNavigation = setTimeout(() => {
             this.props.history.push('/', { prev: true });
-        }, 20000);
+        }, 20000 + 9999999999999);
     }
 
     componentWillUnmount() {
@@ -49,7 +49,14 @@ export default class ButtonMenu extends Component {
         return (
             <ViewWrapper bgStyle={{background: `url(${bgUrl})`, filter: 'grayscale(40%) blur(5px) brightness(0.5)'}} in={this.props.in}
                 onExit={() => this.cancelInactiveNavigation()}>
-                <ul style={{margin: '50px', marginTop: '20vh', padding: 0, listStyle: 'none'}}>
+                <Link to={{ pathname: '/', state: { prev: true } }}>
+                    <FontAwesomeIcon icon="home" className="white-shadow-icon" style={{ fontSize: '50px', margin: '30px' }}/>
+                </Link>
+
+                <h1 className='display-2 text-center text-white'>Discover Kingston</h1>
+
+
+                <ul style={{margin: '50px', marginTop: '10vh', padding: 0, listStyle: 'none', display: 'flex', flexWrap: 'wrap'}}>
                     {/*<li className="menu-btn" style={{ height: '100px'}} />*/}
                 { menuEntries.map(({
                     label, desc='', path,
@@ -66,7 +73,7 @@ export default class ButtonMenu extends Component {
                             <li className={`menu-btn ${fullWidth? 'full-width':''}`} tabIndex={i}>
                                 <div className="contents" style={{backgroundColor, borderColor}}
                                     onClick={(e) => this.onEntryClicked(e, path, swap, prev, triggersAnimation)}>
-                                    <h2 className="display-4">{label}</h2>
+                                    <h2 className="display-5">{label}</h2>
                                     <p className="lead mt-4">{ desc }</p>
 
                                 <FontAwesomeIcon icon="chevron-right"

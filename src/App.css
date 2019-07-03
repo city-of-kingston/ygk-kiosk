@@ -13,6 +13,18 @@ a.main-button {
   box-sizing: border-box;
 }
 
+.white-shadow-icon {
+  color: white !important;
+  -webkit-filter: drop-shadow( 5px 5px 1px rgba(0, 0, 0, 1)) !important;
+  filter: drop-shadow( 5px 5px 1px rgba(0, 0, 0, 1)) !important;
+}
+
+.white-shadow-icon.disabled {
+  color: grey !important;
+  -webkit-filter: drop-shadow( 5px 5px 1px rgba(50, 50, 50, 1)) !important;
+  filter: drop-shadow( 5px 5px 1px rgba(50, 50, 50, 1)) !important;
+}
+
 .webview-header {
   width: 100vw;
   height: 100px;
@@ -23,10 +35,6 @@ a.main-button {
   border-bottom: 5px solid #111111;
   vertical-align: middle;
   box-sizing: border-box;
-}
-
-.webview-header a {
-  color: white !important;
 }
 
 .webview-header > img.logo {
@@ -40,11 +48,6 @@ a.main-button {
   height: calc(100vh - 100px);
   border: none;
   display: block;
-}
-
-.webview-header svg.svg-inline--fa {
-  -webkit-filter: drop-shadow( 5px 5px 1px rgba(0, 0, 0, 1));
-  filter: drop-shadow( 5px 5px 1px rgba(0, 0, 0, 1));
 }
 
 .inactivity-modal {
@@ -141,6 +144,7 @@ a.main-button {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   pointer-events: none;
+  z-index: -1;
 }
 
 .page-enter {
@@ -254,20 +258,15 @@ a.main-button {
 .menu-btn {
   position: relative;
   -webkit-overflow-scrolling: touch;
-  width: 50%;
-  float: left;
+  flex: 1 0 50%;
   outline: none;
+  padding: 20px;
   /*clear: left;*/
 }
 
 .menu-btn.full-width {
-  width: 100%;
+  flex: 1 0 100%;
 }
-
-/*.menu-btn:nth-child(2n) {
-  float: right;
-  clear: right;
-}*/
 
 .menu-btn .contents {
   position: relative;
@@ -275,9 +274,8 @@ a.main-button {
   border: 5px solid rgba(0,0,0,0.2);
   border-radius: 2px;
   padding: 40px;
-  margin: 20px;
-  width: calc(100% - 40px);
   color: white;
+  height: 100%;
 
   opacity: 0;
   transition: opacity 0.6s ease-in-out;
@@ -311,4 +309,11 @@ a.main-button {
 .menu-btn-enter-active .contents,
 .menu-btn-enter-done .contents {
   opacity: 1;
+}
+
+
+.display-5 {
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 1.2;
 }

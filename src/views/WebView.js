@@ -34,7 +34,7 @@ class InactivityModal extends Component {
 			<div className="inactivity-modal">
 				<div>
 					<h1>Are you still there?</h1>
-					<p>Returning to the homepage in {this.state.secondsRemaining} seconds</p>
+					<p>Returning to the landing page in {this.state.secondsRemaining} seconds</p>
 					<hr/>
 					<Button size="lg" color="primary"
 						onClick={() => this.props.onInactivityCallback(false)}>
@@ -42,7 +42,7 @@ class InactivityModal extends Component {
 					</Button>
 					<Button size="lg" color="secondary" className="ml-3"
 						onClick={() => this.props.onInactivityCallback(true)}>
-						<FontAwesomeIcon icon="home" className="mr-2" /> Home
+						<FontAwesomeIcon icon="home" className="mr-2" /> Go Back
 					</Button>
 				</div>
 			</div>
@@ -86,17 +86,22 @@ export default class WebView extends Component {
 		}
 	}
 
+	onBackPressed() {
+		console.log('back');
+	}
+
 	render() {
 		return (
 			<ViewWrapper>
 				{ this.state.showInactivityModal?
 					<InactivityModal onInactivityCallback={this.onInactivityCallback.bind(this)} /> : null }
 				<div className="webview-header">
-					<Link to={{ pathname: '/', state: { prev: true } }}>
-						<FontAwesomeIcon icon="home" />
-					</Link>
-					<img className="logo ml-4" src={`${Defs.BASENAME}/assets/branding/YGK_rev_white.png`}
+					<img className="logo" src={`${Defs.BASENAME}/assets/branding/YGK_rev_white.png`}
 						alt="YGK Logo" />
+
+					<Link to={{ pathname: '/menu', state: { swap: true } }} className="float-right">
+						<FontAwesomeIcon icon="sign-out-alt" className="white-shadow-icon"/>
+					</Link>
 				</div>
 				<iframe className="webview-iframe" src={this.props.url} title={this.props.title} />
 			</ViewWrapper>

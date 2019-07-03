@@ -11,17 +11,17 @@ import WebView from './views/WebView';
 import ButtonMenu from './views/ButtonMenu';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faHome, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faChevronRight, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
-  faHome, faChevronRight
+  faHome, faChevronRight, faSignOutAlt
 );
 
 const supportsHistory = 'pushState' in window.history;
 
 const mainMenuEntries = [
   { label: 'Possible Made Here', fullWidth: true,
-    borderColor: '#ee365f', backgroundColor: 'rgba(76, 48, 65, 0.5)',
+    borderColor: '#842269', backgroundColor: 'rgba(63, 43, 86, 0.5)',
     desc: 'Discover the possibility and advantage of building your life in Kingston.',
     path: '/possiblemadehere' },
 
@@ -31,14 +31,24 @@ const mainMenuEntries = [
     path: '/visitkingston' },
 
   { label: 'YGK Airport',
-    borderColor: '#842269', backgroundColor: 'rgba(63, 43, 86, 0.5)',
+    borderColor: '#00918a', backgroundColor: 'rgba(77, 77, 79, 0.5)',
     desc: 'Navigate the fascinating history and modern amenities of our brand new airport.',
-    path: 'kingstonairport' },
+    path: '/kingstonairport' },
 
-  { label: 'South Eastern Ontario', fullWidth: true,
+  { label: 'Kingston Economic Development', fullWidth: true,
     borderColor: '#ac0940', backgroundColor: 'rgba(76, 48, 65, 0.5)',
+    desc: 'Find out how Kingston’s strategic location, state-of-the-art infrastructure, and diverse workforce can benefit your business.',
+    path: '/kedco' },
+
+  { label: 'South Eastern Ontario', fullWidth: false,
+    borderColor: '#00918a', backgroundColor: 'rgba(77, 77, 79, 0.5)',
     desc: 'Discover enchanting villages, endless beaches, and award-winning wineries nestled along the shores of our region’s majestic waterways.',
-    path: 'seontario' },
+    path: '/seontario' },
+
+  { label: 'The City of Kingston', fullWidth: false,
+    borderColor: '#ee365f', backgroundColor: 'rgba(76, 48, 65, 0.5)',
+    desc: 'Learn about life in Kingston and discover the exciting initiatives that make our city a leader in smart and sustainable living.',
+    path: '/cityofkingston' },
   // { label: 'Go Back', icon: 'home',
   //   path: '/', swap: false, prev: true, triggersAnimation: true },
 ];
@@ -57,6 +67,10 @@ const routes = [
     props: { url: "https://thegreatwaterway.com", title: 'South Eastern Ontario' }},
   { path: '/visitkingston', Component: WebView,
     props: { url: "https://www.visitkingston.ca/", title: 'Visit Kingston' }},
+  { path: '/kedco', Component: WebView,
+    props: { url: "https://www.kingstonecdev.com/invest", title: 'Kingston Economic Development' }},
+  { path: '/cityofkingston', Component: WebView,
+    props: { url: "https://www.cityofkingston.ca/", title: 'City of Kingston' }},
 ];
 
 const App = () => (
