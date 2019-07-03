@@ -20,7 +20,7 @@ export default class ButtonMenu extends Component {
     componentDidMount() {
         this.inactiveNavigation = setTimeout(() => {
             this.props.history.push('/', { prev: true });
-        }, 20000 + 9999999999999);
+        }, 20000);
     }
 
     componentWillUnmount() {
