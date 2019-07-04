@@ -62,7 +62,7 @@ const routes = [
   { path: '/possiblemadehere', Component: WebView,
     props: { url: "https://possiblemadehere.org", title: 'Possible Made Here.' }},
   { path: '/kingstonairport', Component: WebView,
-    props: { url: "http://kingstonairport.ca", title: 'YGK Airport' }},
+    props: { url: "https://kingstonairport.ca", title: 'YGK Airport' }},
   { path: '/seontario', Component: WebView,
     props: { url: "https://thegreatwaterway.com", title: 'South Eastern Ontario' }},
   { path: '/visitkingston', Component: WebView,
