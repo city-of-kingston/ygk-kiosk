@@ -20,11 +20,6 @@ library.add(
 const supportsHistory = 'pushState' in window.history;
 
 const mainMenuEntries = [
-  { label: 'Possible Made Here', fullWidth: true,
-    borderColor: '#842269', backgroundColor: 'rgba(63, 43, 86, 0.5)',
-    desc: 'Discover the possibility and advantage of building your life in Kingston.',
-    path: '/possiblemadehere' },
-
   { label: 'Visit Kingston',
     borderColor: '#cf4c27', backgroundColor: 'rgba(68, 54, 53, 0.5)',
     desc: 'Experience Kingston’s vibrant culture and find out what makes the Limestone City one of Canada’s most popular destinations.',
@@ -35,10 +30,15 @@ const mainMenuEntries = [
     desc: 'Navigate the fascinating history and modern amenities of our brand new airport.',
     path: '/kingstonairport' },
 
-  { label: 'Kingston Economic Development', fullWidth: true,
-    borderColor: '#ac0940', backgroundColor: 'rgba(76, 48, 65, 0.5)',
-    desc: 'Find out how Kingston’s strategic location, state-of-the-art infrastructure, and diverse workforce can benefit your business.',
-    path: '/kedco' },
+  { label: 'Possible Made Here', fullWidth: true,
+    borderColor: '#842269', backgroundColor: 'rgba(63, 43, 86, 0.5)',
+    desc: 'Discover the possibility and advantage of building your life in Kingston.',
+    path: '/possiblemadehere' },
+
+  // { label: 'Kingston Economic Development', fullWidth: true,
+  //   borderColor: '#ac0940', backgroundColor: 'rgba(76, 48, 65, 0.5)',
+  //   desc: 'Find out how Kingston’s strategic location, state-of-the-art infrastructure, and diverse workforce can benefit your business.',
+  //   path: '/kedco' },
 
   { label: 'South Eastern Ontario', fullWidth: false,
     borderColor: '#00918a', backgroundColor: 'rgba(77, 77, 79, 0.5)',
