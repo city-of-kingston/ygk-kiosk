@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/ygk-kiosk/static/css/main.8981d38a.chunk.css",
+    "main.js": "/ygk-kiosk/static/js/main.e48ca677.chunk.js",
+    "main.js.map": "/ygk-kiosk/static/js/main.e48ca677.chunk.js.map",
+    "runtime~main.js": "/ygk-kiosk/static/js/runtime~main.30472c18.js",
+    "runtime~main.js.map": "/ygk-kiosk/static/js/runtime~main.30472c18.js.map",
+    "static/css/2.0624914a.chunk.css": "/ygk-kiosk/static/css/2.0624914a.chunk.css",
+    "static/js/2.37bb8f54.chunk.js": "/ygk-kiosk/static/js/2.37bb8f54.chunk.js",
+    "static/js/2.37bb8f54.chunk.js.map": "/ygk-kiosk/static/js/2.37bb8f54.chunk.js.map",
+    "index.html": "/ygk-kiosk/index.html",
+    "precache-manifest.e1f19a04e6b630bf1e183c280bb4f25d.js": "/ygk-kiosk/precache-manifest.e1f19a04e6b630bf1e183c280bb4f25d.js",
+    "service-worker.js": "/ygk-kiosk/service-worker.js",
+    "static/css/2.0624914a.chunk.css.map": "/ygk-kiosk/static/css/2.0624914a.chunk.css.map",
+    "static/css/main.8981d38a.chunk.css.map": "/ygk-kiosk/static/css/main.8981d38a.chunk.css.map"
+  }
+}
