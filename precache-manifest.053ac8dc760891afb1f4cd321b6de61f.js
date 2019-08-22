@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ffba10d131ee2a8c223955820b391c3a",
+    "revision": "3b8bcb244bb59b4798360a197f1471de",
     "url": "/ygk-kiosk/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ygk-kiosk/static/css/2.0624914a.chunk.css"
   },
   {
-    "revision": "e19c68c71ee6edc734af",
+    "revision": "88545ebc2da521a57e20",
     "url": "/ygk-kiosk/static/css/main.8981d38a.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ygk-kiosk/static/js/2.37bb8f54.chunk.js"
   },
   {
-    "revision": "e19c68c71ee6edc734af",
-    "url": "/ygk-kiosk/static/js/main.e48ca677.chunk.js"
+    "revision": "88545ebc2da521a57e20",
+    "url": "/ygk-kiosk/static/js/main.b354f9b9.chunk.js"
   },
   {
     "revision": "8fa5a257fbd126056425",
