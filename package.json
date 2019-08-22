@@ -1,8 +1,8 @@
 {
-  "name": "ktown-kiosk",
+  "name": "ygk-kiosk",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://ryanrossiter.github.io/ktown-kiosk",
+  "homepage": "http://city-of-kingston.github.io/ygk-kiosk",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.19",
     "@fortawesome/free-solid-svg-icons": "^5.9.0",
